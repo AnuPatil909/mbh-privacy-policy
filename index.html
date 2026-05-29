@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Maratha Business Hub</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #EF6C00;
+            --primary-dark: #BF360C;
+            --primary-light: #FFF3E0;
+            --accent: #F59E0B;
+            --bg-color: #FAF6F0;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-dark: #1E293B;
+            --text-light: #64748B;
+            --border-color: #E2E8F0;
+            --shadow: 0 10px 30px -10px rgba(239, 108, 0, 0.15);
+            --shadow-lg: 0 20px 40px -15px rgba(239, 108, 0, 0.2);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --font-heading: 'Outfit', sans-serif;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0F172A;
+            --card-bg: rgba(30, 41, 59, 0.95);
+            --text-dark: #F8FAFC;
+            --text-light: #94A3B8;
+            --border-color: #334155;
+            --primary-light: #2C1A04;
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Ambient glowing background shapes */
+        .ambient-glow-1 {
+            position: fixed;
+            top: -10%;
+            right: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(239, 108, 0, 0.15) 0%, rgba(245, 158, 11, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        .ambient-glow-2 {
+            position: fixed;
+            bottom: -10%;
+            left: -10%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(191, 54, 12, 0.1) 0%, rgba(239, 108, 0, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        /* Top header bar */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(239, 108, 0, 0.3);
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.25rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        /* Theme toggle button */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 6px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-main);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            background-color: var(--bg-color);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+            flex-grow: 1;
+        }
+
+        /* Navigation / Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 6rem;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-item a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .nav-item a:hover, .nav-item.active a {
+            color: var(--primary);
+            background-color: var(--primary-light);
+            font-weight: 600;
+            padding-left: 1rem;
+        }
+
+        /* Content Card */
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-section {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.5px;
+        }
+
+        .last-updated {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Policy details styling */
+        section {
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 6.5rem;
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+        }
+
+        li {
+            position: relative;
+            color: var(--text-light);
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .contact-box {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-box p {
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .contact-box a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                margin: 1.5rem auto;
+            }
+
+            .sidebar {
+                display: none; /* Hide sidebar list on mobile for cleaner page */
+            }
+
+            .content-card {
+                padding: 2rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 1rem;
+            }
+            .content-card {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo-section">
+                <div class="logo-icon">M</div>
+                <span class="logo-text">Maratha Business Hub</span>
+            </a>
+            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+                <span id="themeIcon">🌙</span> <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <div class="sidebar-title">Sections</div>
+                <ul class="nav-list">
+                    <li class="nav-item active"><a href="#introduction">Introduction</a></li>
+                    <li class="nav-item"><a href="#information-collection">Information Collection</a></li>
+                    <li class="nav-item"><a href="#information-use">How We Use Info</a></li>
+                    <li class="nav-item"><a href="#data-storage">Data Security & Storage</a></li>
+                    <li class="nav-item"><a href="#third-party">Third-Party Services</a></li>
+                    <li class="nav-item"><a href="#location-data">Location & Permissions</a></li>
+                    <li class="nav-item"><a href="#user-rights">Your Rights</a></li>
+                    <li class="nav-item"><a href="#contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-card">
+            <div class="hero-section">
+                <span class="badge">Legal Agreement</span>
+                <h1>Privacy Policy</h1>
+                <p class="last-updated">Last Updated: May 29, 2026</p>
+            </div>
+
+            <section id="introduction">
+                <h2>1. Introduction</h2>
+                <p>Welcome to <strong>Maratha Business Hub</strong> ("we", "our", or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application ("App").</p>
+                <p>By downloading, installing, or using the Maratha Business Hub app, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms of this Privacy Policy, please do not access or use the application.</p>
+            </section>
+
+            <section id="information-collection">
+                <h2>2. Information We Collect</h2>
+                <p>We collect several types of information to provide and improve our services to you:</p>
+                <ul>
+                    <li><strong>Account Information:</strong> When you register an account, we collect your email address, password, full name, and phone number via Firebase Authentication.</li>
+                    <li><strong>Business Profile Information:</strong> If you register a business, we collect business names, category details, description, address/location, contact numbers (including WhatsApp), logos, images, and other promotional details.</li>
+                    <li><strong>Job Listing & Event Information:</strong> Information about job posts, employment requirements, application methods, community events, program schedules, and location coordinates.</li>
+                    <li><strong>Interaction Data:</strong> Visitor details tracking for listed businesses, allowing business owners to monitor page visits and connect with interested customers.</li>
+                </ul>
+            </section>
+
+            <section id="information-use">
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the collected information for various professional and operational purposes:</p>
+                <ul>
+                    <li>To facilitate easy connection and networking between Maratha business owners and prospective clients.</li>
+                    <li>To authenticate your identity and provide secure login features.</li>
+                    <li>To list, search, and map business locations for local discoverability.</li>
+                    <li>To notify users of relevant updates, application features, new jobs, or community events.</li>
+                    <li>To track profile visits so that listed businesses can optimize their listings.</li>
+                    <li>To maintain and improve the overall performance, security, and user experience of our app.</li>
+                </ul>
+            </section>
+
+            <section id="data-storage">
+                <h2>4. Data Security and Storage</h2>
+                <p>Your security is of paramount importance to us. We store your account and business data securely using <strong>Google Firebase Services (Authentication and Cloud Firestore)</strong>, which employs industry-standard encryption protocols. Photos and business logos are hosted securely through certified image-hosting servers (ImgBB) to enable fast loading speeds.</p>
+                <p>While we strive to use commercially acceptable means to protect your personal information, please remember that no method of transmission over the internet, or method of electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+            </section>
+
+            <section id="third-party">
+                <h2>5. Third-Party Services</h2>
+                <p>We may employ third-party companies and service providers to facilitate our App services, host user media, or analyze app metrics. These third parties have access to your Personal Information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+                <p>Our app utilizes the following third-party integrations:</p>
+                <ul>
+                    <li><strong>Google Firebase:</strong> Used for secure authentication, real-time database management, dynamic configuration, and push notifications.</li>
+                    <li><strong>ImgBB:</strong> Used to securely host and retrieve user-uploaded images, such as business cards, logos, and event banners.</li>
+                    <li><strong>OpenStreetMap / Leaflet (Flutter Map):</strong> Used to provide geographical maps and business locating features without violating user privacy.</li>
+                </ul>
+            </section>
+
+            <section id="location-data">
+                <h2>6. Location and Device Permissions</h2>
+                <p>To provide location-based search results (finding shops or businesses near you), our app may request permission to access your device's geographical location using GPS. This location information is solely used to display businesses in your vicinity and is not tracked continuously in the background or shared with third parties.</p>
+                <p>You can enable or disable location access at any time through your mobile device system settings. Disabling location may, however, limit your ability to view nearby listings relative to your current position.</p>
+            </section>
+
+            <section id="user-rights">
+                <h2>7. Your Rights & Data Deletion</h2>
+                <p>We believe you should have full control over your personal data. At any time, you have the right to:</p>
+                <ul>
+                    <li>Access, review, or update your registered account or business listings directly inside the app settings.</li>
+                    <li>Request the complete deletion of your account and all associated listings from our database.</li>
+                </ul>
+                <p>To request permanent deletion of your data, you can contact our administration team at <a href="mailto:aniketatkare@gmail.com">aniketatkare@gmail.com</a>. We will process your deletion request within 7 business days, removing all authenticated credentials, listings, jobs, and events associated with your account.</p>
+            </section>
+
+            <section id="contact-us">
+                <h2>8. Contact Us</h2>
+                <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy, please feel free to reach out to our admin team at:</p>
+                <div class="contact-box">
+                    <p>📧 <strong>Email Support:</strong> <a href="mailto:aniketatkare@gmail.com">aniketatkare@gmail.com</a></p>
+                    <p>✉️ <strong>Alternative Email:</strong> <a href="mailto:anu909m@gmail.com">anu909m@gmail.com</a></p>
+                    <p>🌐 <strong>Platform:</strong> Maratha Business Hub (MBH) - App Portal</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Maratha Business Hub. All rights reserved. Empowering Community Businesses through Technology.</p>
+    </footer>
+
+    <script>
+        // Check for saved theme preference, otherwise use system preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeUI(savedTheme);
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeUI(newTheme);
+        }
+
+        function updateThemeUI(theme) {
+            const themeIcon = document.getElementById('themeIcon');
+            const themeText = document.getElementById('themeText');
+            if (theme === 'dark') {
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light Mode';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark Mode';
+            }
+        }
+
+        // Active link highlighting on scroll
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 120)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                const linkHref = item.querySelector('a').getAttribute('href').substring(1);
+                if (linkHref === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
