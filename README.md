@@ -121,3 +121,7 @@ Innovating Technology for Community Growth!
 2. **Option B (GitHub Pages):** You can upload the `index.html` from the `privacy_policy` directory to a public GitHub repository named `privacy-policy` and enable GitHub Pages in settings. Your URL will be:
    `https://<your-username>.github.io/privacy-policy/`
 3. **Option C (Google Sites / Direct Link):** You can upload this HTML code to any server hosting or copy its text to a Google Doc / Google Site that is publicly accessible.
+
+
+### The Privacy Policy URL:
+https://anupatil909.github.io/mbh-privacy-policy/
